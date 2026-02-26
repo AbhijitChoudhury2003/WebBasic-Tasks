@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style=" padding-inline: 10px;">
+  
+  <form action="" method="get">
+<!-- ////////////////// -->
+
+ <fieldset > 
+  <Legend>Login Form</Legend>
+    <label for="name" name="name" required>Name :</label>
+    <input type="text" id="name" placeholder="Enter name" required maxlength="26"minlength="3" >  
+    <!-- //They will be coming in the ssme line so it is an inline-element -->
+<!-- <br> -->
+    <label for="email" name="email">Email :</label>
+    <input type="email" id="email" name="email">  
+
+    <br>
+    <label for="tel" name="tel">Phone :</label>
+    <input type="tel" id="tel" > 
+
+    <label for="number" name="age">Age :</label>
+    <input type="number" id="age" min="5" max="85" >
+    <br>
+    <label for="password" name="password">Password :</label>
+    <input type="password" id="password" >
+ <br>
+    <label for="date" name="date">DOB:</label>
+    <input type="date" id="date" >
+<br>
+<label for="file" name="file">Upload File </label>
+<input type="file" id="file" >
+
+<br>
+
+<!-- TAsk 2//////////////////////////////// -->
+ <h4>Day 2 --> Task 1 </h4>
+<label for="jpg">Upload Jpg:</label>
+<input type="file" id="jpg"  accept=".jpg">
+<br>
+<br>
+<label for="gender" name="gender">Gender</label>
+
+<br>
+<input type="radio" id="male" name="gender" value="male">Male </body>
+
+<input type="radio" id="female" name="gender" value="female">Female</input>
+<br>
+<label for="range" type ="range" name="range">range for others</label>
+<br>
+<label for="checkboxes">Checkboxes for Skills</label>
+<br>
+
+<input type="checkbox" name="checkbox" selected>Python</input>
+<br>
+<input type="checkbox" name="checkbox">JS</input>
+<br>
+<input type="checkbox" name="checkbox">HTML CSS</input>
+<br>
+
+<select>
+  <option value="" disabled selected hidden >Select a subject</option>
+  <option value="" >Js</option>
+  <option value="">React</option>
+  <option value="">Postman</option>
+</select>
+
+<br>
+
+<h4>Day2 --> Task 2</h4>
+<select>
+  <option value="" disabled selected hidden>Select your Location</option>
+  <optgroup label="West bengal">
+    <option value="">Kolkata</option>
+    <option value="">Howrah</option>
+  </optgroup>
+  <optgroup label="Jharkhand">
+    <option value="">ranchi</option>
+    <option value="">Dhanbad</option>
+  </optgroup>
+</select>
+
+<br>
+<br>
+<label for="message">Feedback</label>
+<br>
+<textarea name="message" id="" placeholder="Enter feedback here  ">
+</textarea>
+<br>
+<br>
+<button for="form">Submit</button>
+
+</fieldset>
+  </form>
+</body>
+</html>
