@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Expense Tracker</h1>
+      <p id="current-date"></p>
+    </header>
+
+    <section class="summary">
+      <div class="card income">
+        <p>Total Income</p>
+        <h2 id="total-income">0.00</h2>
+      </div>
+
+      <div class="card expense">
+        <p>Total Expenses</p>
+        <h2 id="total-expenses">0.00</h2>
+      </div>
+
+      <div class="card balance">
+        <p>Balance</p>
+        <h2 id="balance">0.00</h2>
+      </div>
+    </section>
+
+    <main>
+
+      <section class="transactions">
+        <div class="section-header">
+          <h2>Transactions</h2>
+          <div class="filter-buttons">
+            <button>All</button>
+            <button>Expenses</button>
+            <button>Income</button>
+          </div>
+        </div>
+        <ul id="tx-list"></ul>
+      </section>
+
+      <section class="add-transaction">
+        <h2>Add Transaction</h2>
+
+        <form onsubmit="addTransaction(event)">
+          <div class="form-group">
+            <label for="desc">Description</label>
+            <input type="text" id="desc" placeholder="Lunch, Netflix..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="0.00" min="0" step="0.01" required>
+          </div>
+
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="transactionType" value="expense" required>
+              Expense
+            </label>
+            <label>
+              <input type="radio" name="transactionType" value="income" required>
+              Income
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="Food">Food & Dining</option>
+              <option value="Transport">Transport</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Health">Health</option>
+              <option value="Bills">Bills & Utilities</option>
+              <option value="Travel">Travel</option>
+              <option value="Salary">Salary</option>
+              <option value="Freelance">Freelance</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date">
+          </div>
+
+          <button type="submit" class="submit-btn">Add Transaction</button>
+        </form>
+      </section>
+
+    </main>
+
+    <section class="breakdown">
+      <h2>Spending Breakdown</h2>
+      <ul id="cat-list"></ul>
+    </section>
+
+  </div>
+
+  <script src="./dist/app.js" type="module"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+</head>
+<body>
+
+  <header>
+    <h1>Expense Tracker</h1>
+    <p id="current-date"></p>
+  </header>
+
+  <section>
+    <div>
+      <p>Total Income</p>
+      <h2 id="total-income">0.00</h2>
+    </div>
+    <div>
+      <p>Total Expenses</p>
+      <h2 id="total-expenses">0.00</h2>
+    </div>
+    <div>
+      <p>Balance</p>
+      <h2 id="balance">0.00</h2>
+    </div>
+  </section>
+
+  
+  <main>
+
+    
+    <section>
+      <div>
+        <h2>Transactions</h2>
+        <div>
+          <button >All</button>
+          <button >Expenses</button>
+          <button >Income</button>
+        </div>
+      </div>
+
+      <ul id="tx-list"></ul>
+    </section>
+
+    <section>
+      <h2>Add Transaction</h2>
+
+      
+
+      <form onsubmit="addTransaction(event)">
+        <div>
+          <label for="desc">Description</label>
+          <input type="text" id="desc" placeholder="e.g. Lunch, Netflix..." required>
+        </div>
+
+        <div>
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="0.00" min="0" step="0.01" required>
+        </div>
+        <div>
+        <label>Transaction Type :</label>
+        <input type="radio" id="expenseType" name="transactionType" value="expense" />
+        <label>Expense</label>
+        <input type="radio" id="incomeType" name="transactionType" value="income" />
+        <label>Income</label>
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option value="Food">Food & Dining</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Health">Health</option>
+            <option value="Bills">Bills & Utilities</option>
+            <option value="Travel">Travel</option>
+            <option value="Salary">Salary</option>
+            <option value="Freelance">Freelance</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="date">Date</label>
+          <input type="date" id="date">
+        </div>
+
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+  </main>
+
+
+  <section>
+    <h2>Spending Breakdown</h2>
+    <ul id="cat-list">
+      
+    </ul>
+  </section>
+
+  
+  <footer>
+    <p>&copy; 2026 Expense Tracker</p>
+  </footer>
+  <script src="./dist/app.js" type="module"></script>
+</body>
+</html> -->
