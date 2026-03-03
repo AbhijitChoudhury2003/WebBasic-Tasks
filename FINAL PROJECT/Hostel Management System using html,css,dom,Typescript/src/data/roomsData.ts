@@ -1,5 +1,5 @@
 ////this data should be of rooms type so.......
-import { Rooms } from "../model/rooms";
+import { Rooms } from "../model/rooms.js";
 
 export const roomsAvailability: Rooms[] = [
   { roomNumber: 101, isOccupied: false },
